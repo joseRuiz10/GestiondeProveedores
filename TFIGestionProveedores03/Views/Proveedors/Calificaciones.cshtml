@@ -1,0 +1,34 @@
+﻿@model IEnumerable<TFIGestionProveedores03.Calificacion_Proveedor>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.comentario)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Calificacion.idCalificacion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Proveedor.RazonSocial)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.comentario)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Calificacion.idCalificacion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Proveedor.RazonSocial)
+        </td>
+    </tr>
+}
+    </table>
+    @Html.ActionLink("Regresar", "Index")

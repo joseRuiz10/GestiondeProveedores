@@ -1,0 +1,46 @@
+﻿@model IEnumerable<TFIGestionProveedores03.Calificacion_Proveedor>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a class="btn btn-success" href="~/Calificacion_Proveedor/Create" role="button">Nuevo</a>
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.comentario)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Calificacion.idCalificacion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Proveedor.RazonSocial)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.comentario)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Calificacion.idCalificacion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Proveedor.RazonSocial)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.idCalificacion_Proveedor }) |
+            @Html.ActionLink("Details", "Details", new { id=item.idCalificacion_Proveedor }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.idCalificacion_Proveedor })
+        </td>
+    </tr>
+}
+
+</table>
